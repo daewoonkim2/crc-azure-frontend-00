@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>
             Resume
         </title>
@@ -8,14 +9,13 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const xhr = new XMLHttpRequest()
-                const url = "http://api.daewoon-kim.online/api/crcfunctionapp03?code=Uo9Kzw1aC3awNN66sx72YIv8v1u5uAvQe1Pt8Lru-IEXAzFuvT7GUQ=="
+                const url = "https://api.daewoon-kim.online/api/crcfunctionapp03?code=Uo9Kzw1aC3awNN66sx72YIv8v1u5uAvQe1Pt8Lru-IEXAzFuvT7GUQ=="
                 xhr.open("GET", url, true)
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         const status = xhr.status;
                         if (status === 0 || (status >= 200 && status < 400)) {
-                            console.log(xhr.responseText);
-                            document.getElementById("counter").innerHTML=("Visitors: " + JSON.parse(xhr.responseText).visitors)
+                            document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
                         } 
                         else {
                         }
@@ -142,7 +142,7 @@
                     </td>
                 </tr>
             </table>
-            <p id="counter" class="a-href-center">Visitors: </p>
+            <p id="counter" class="a-href-center">Visitor Counter: Loading...</p>
             <a href="/"><p class="a-href-center">Back to home page</p></a>
         </div>
     </body>
