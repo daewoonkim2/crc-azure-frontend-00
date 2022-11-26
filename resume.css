@@ -1,0 +1,29 @@
+.font{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table1 {
+    width: 100%;
+}
+
+.gapclose {
+    border-spacing: 0;
+    line-height: 0;
+}
+
+.inline {
+    display: inline;
+}
+
+.td-right {
+    text-align: right;
+}
+
+.a-href-center {
+    text-align: center;
+}
+
+#container {
+    max-width: 60%;
+    margin: auto;
+}

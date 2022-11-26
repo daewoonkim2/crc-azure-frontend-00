@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Resume
+        </title>
+        <link rel="stylesheet" href="./resume.css">
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const xhr = new XMLHttpRequest()
+                const url = "http://api.daewoon-kim.online/api/crcfunctionapp03?code=Uo9Kzw1aC3awNN66sx72YIv8v1u5uAvQe1Pt8Lru-IEXAzFuvT7GUQ=="
+                xhr.open("GET", url, true)
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        const status = xhr.status;
+                        if (status === 0 || (status >= 200 && status < 400)) {
+                            console.log(xhr.responseText);
+                            document.getElementById("counter").innerHTML=("Visitors: " + JSON.parse(xhr.responseText).visitors)
+                        } 
+                        else {
+                        }
+                    }
+                }
+                xhr.send()
+            });
+        </script>
+    </head>
+    <body class="font">
+        <div id="container">
+            <table class="table1 gapclose">
+                <tr>
+                    <td>
+                        <h1>
+                            Daewoon Kim
+                        </h1>                   
+                    </td>
+                    <td class="td-right">
+                        <img src="./Xgf1JjVrwM0T5mYBXFYc.png" height="40pt"/>
+                    </td>
+                </tr>
+            </table>
+            <h2> 
+                Work experience
+            </h2>
+            <table class="table1">
+                <tr>
+                    <td>
+                        <b class="inline">
+                            Associate
+                        </b>
+                        - Revature, Remote, Canada
+                    </td>
+                    <td class="td-right">
+                        Apr. 2022 - Present
+                    </td>
+                </tr>
+            </table>
+            <ul>
+                <li> 
+                    Led the development of prototype backend APIs using Java, Spring Boot, implemented with prometheus metrics viewable on Grafana dashboards, and deployed CI/CD with Jenkins, on various Google Cloud Platform products. </li>
+                <li>Monitored infrastructure for Citibank using Geneos Active console, coordinated efforts to ensure stability and reliability of systems, and created scripts to reduce time spent on manual tasks and false incident alerts. </li>
+            </ul>
+            <table class="table1">
+                <tr>
+                    <td>
+                        <b class="inline">
+                            Quality Assurance Analyst
+                        </b>
+                        - Neo Financial,
+                        Calgary, Alberta, Canada
+                    </td>
+                    <td class="td-right">
+                        Sept. 2021 - Mar. 2022
+                    </td>
+                </tr>
+            </table>
+            <ul>
+                <li>
+                    Tested software and logged defects and bugs, daily, in an agile environment. Covered accessibility issues, inconveniences, and security vulnerabilities. 
+                </li>
+                <li>
+                    Created scripts to automate account management for weekly regression tests, which improved coverage by 5% of a ~450 manual test case suite. 
+                </li>
+                <li>
+                    Led efforts to implement the initial E2E framework for mobile testing, which was superseded by a dedicated SDET team. 
+                </li>
+            </ul>
+            <table class="table1">
+                <tr>
+                    <td>
+                        <b class="inline">
+                            Lab Marker
+                        </b>
+                        - York University,
+                        Toronto, Ontario, Canada
+                    </td>
+                    <td class="td-right">
+                        Jan. 2019 - Apr. 2019
+                    </td>
+                </tr>
+            </table>
+            <ul>
+                <li>
+                    Provided students assistance with debugging labs, graded them, resolved lab hardware issues, and proctored tests for an introductory programming class (EECS1022 – Programming for Mobile Computing).            </li>
+                </li>
+            </ul>
+            <table class="table1">
+                <tr>
+                    <td>
+                        <b class="inline">
+                            UIT Student Client Services Support Assistant
+                        </b>
+                        - York University,
+                        Toronto, Ontario, Canada
+                    </td>
+                    <td class="td-right">
+                        Apr. 2018 - Aug. 2018
+                    </td>
+                </tr>
+            </table>
+            <ul>
+                <li>
+                    Monitored computer labs, and provided support for issues related to software and hardware provided by the university in person, over the phone, and on live chat.
+                </li>
+            </ul>
+            <h2>
+                Projects
+            </h2>
+            <h2>
+                Education
+            </h2>
+            <table class="table1">
+                <tr>
+                    <td>
+                        <p class="inline">
+                            BSc. 
+                        </p>
+                        Computer Science, York University
+                    </td>
+                    <td class="td-right">
+                        Sept. 2016 - Aug. 2021
+                    </td>
+                </tr>
+            </table>
+            <p id="counter" class="a-href-center">Visitors: </p>
+            <a href="/"><p class="a-href-center">Back to home page</p></a>
+        </div>
+    </body>
+</html>
