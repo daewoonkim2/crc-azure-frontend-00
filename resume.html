@@ -9,18 +9,24 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const xhr = new XMLHttpRequest()
-                const url = "https://api.daewoon-kim.online/api/crcfunctionapp03?code=Uo9Kzw1aC3awNN66sx72YIv8v1u5uAvQe1Pt8Lru-IEXAzFuvT7GUQ=="
+                const url = "https://example.com"
                 xhr.open("GET", url, true)
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
                         const status = xhr.status;
                         if (status === 0 || (status >= 200 && status < 400)) {
-                            document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
+                            try {
+                                document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
+                            }
+                            catch (err){
+                                console.log(err)
+                                document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
+                            }
                         }
-                    }
-                    else {
+                        else{
                             document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
                         }
+                    }
                 }
                 xhr.send()
             });
