@@ -19,9 +19,7 @@ jobs:
         inlineScript: |
           az storage blob upload-batch 
           --account-name crcazurestaticstorage00 
-          --exclude-path .git
-          --exclude-path .github
-          --exclude-pattern .gitignore
+          --exclude-path .git;.github;.gitignore
           --overwrite true 
           --auth-mode key -d '$web' -s .
 
