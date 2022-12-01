@@ -2,11 +2,11 @@ name: Blob storage website CI
 
 on:
   push:
+    paths-ignore:
+      - '.git'
+      - '.github'
+      - '.gitignore'
     branches: [ main ]
-    paths:
-      - '/'
-      - '!.github'
-      - '!.gitignore'
 
 jobs:
   build:
