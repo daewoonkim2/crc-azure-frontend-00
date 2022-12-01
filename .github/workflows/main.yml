@@ -3,6 +3,10 @@ name: Blob storage website CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - './'
+      - '!.github'
+      - '!.gitignore'
 
 jobs:
   build:
@@ -17,7 +21,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob upload-batch --account-name crcazurestaticstorage00 --auth-mode key -d '$web' -s .
+          az storage blob upload-batch --account-name crcazurestaticstorage00 --overwrite true --auth-mode key -d '$web' -s .
 
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
