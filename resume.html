@@ -16,11 +16,11 @@
                         const status = xhr.status;
                         if (status === 0 || (status >= 200 && status < 400)) {
                             document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
-                        } 
-                        else {
-                            document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
                         }
                     }
+                    else {
+                            document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
+                        }
                 }
                 xhr.send()
             });
