@@ -17,15 +17,8 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob upload-batch
-            --exclude-path .git
-            --exclude-path .github
-            --exclude-pattern .gitignore
-            --overwrite true
-            --account-name crcazurestaticstorage00
-            --auth-mode key
-            -d '$web'
-            -s .
+          rm -rf .git/ ; rm -rf .github/ ; rm .gitignore \
+          az storage blob upload-batch --overwrite true --account-name crcazurestaticstorage00 --auth-mode key -d '$web' -s .
 
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
