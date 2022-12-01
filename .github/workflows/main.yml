@@ -24,8 +24,8 @@ jobs:
           --overwrite true
           --account-name crcazurestaticstorage00 
           --auth-mode key 
-          -d '$web' 
-          -s .
+          --source '$web' 
+          --destination .
 
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
