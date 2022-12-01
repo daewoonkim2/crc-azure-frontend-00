@@ -18,6 +18,7 @@
                             document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
                         } 
                         else {
+                            document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
                         }
                     }
                 }
