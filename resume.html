@@ -9,7 +9,7 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const xhr = new XMLHttpRequest()
-                const url = "https://example.com"
+                const url = "https://crc-az-functionapp-01.azurewebsites.net/api/visit"
                 xhr.open("GET", url, true)
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === XMLHttpRequest.DONE) {
