@@ -12,7 +12,7 @@
                 const url = "https://api.daewoon-kim.online/api/visit"
                 xhr.open("GET", url, true)
                 xhr.onreadystatechange = () => {
-                    if (xhr.readyState === XMLHttpRequest.DONE && (status === 0 || (status >= 200 && status < 400))) {
+                    if (xhr.readyState === XMLHttpRequest.DONE && (xhr.status === 0 || (xhr.status >= 200 && xhr.status < 400))) {
                         try {
                             document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
                         }
