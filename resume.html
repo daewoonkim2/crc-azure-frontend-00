@@ -12,20 +12,17 @@
                 const url = "https://api.daewoon-kim.online/api/visit"
                 xhr.open("GET", url, true)
                 xhr.onreadystatechange = () => {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        const status = xhr.status;
-                        if (status === 0 || (status >= 200 && status < 400)) {
-                            try {
-                                document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
-                            }
-                            catch (err){
-                                console.log(err)
-                                document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
-                            }
+                    if (xhr.readyState === XMLHttpRequest.DONE && (status === 0 || (status >= 200 && status < 400))) {
+                        try {
+                            document.getElementById("counter").innerHTML=("Visitor Counter: " + JSON.parse(xhr.responseText).visitors)
                         }
-                        else{
-                            document.getElementById("counter").innerHTML=("Visitor Counter: Error!")
+                        catch (err){
+                            console.log(err)
+                            document.getElementById("counter").innerHTML=("Visitor Counter: Error with the response text!")
                         }
+                    }
+                    else {
+                        document.getElementById("counter").innerHTML=("Visitor Counter: Error with the http request!")
                     }
                 }
                 xhr.send()
